@@ -1,9 +1,9 @@
 var tanggal =3; // assign nilai variabel tanggal disini! (dengan angka antara 1 - 31)
 var bulan = 4; // assign nilai variabel bulan disini! (dengan angka antara 1 - 12)
 var tahun = 1994; // assign nilai variabel tahun disini! (dengan angka antara 1900 - 2200)
-var outTanggal;
-var outBulan;
-var outTahun;   
+var outTanggal; //variabel untuk validasi output
+var outBulan; //variabel untuk validasi output
+var outTahun;   //variabel untuk validasi output 
 
 switch (bulan)
 {

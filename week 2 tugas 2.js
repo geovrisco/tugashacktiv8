@@ -23,8 +23,8 @@
 
 
 
-var nama = '';
-var peran = '';
+var nama = 'Maikel';
+var peran = 'Penyihir';
 
 if (nama =="" &&  peran==""){
 console.log('Nama harus diisi!');
