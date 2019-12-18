@@ -27,9 +27,10 @@ var rows3=5;
 var bintang3="";
 
 for(i=0; i<=rows3;i++){
-    for(j=0;j<=i;j++){
+    for(j=0;j<=i;j++){ 
         bintang3+="*"
     }bintang3+="\n"
 }
 
 console.log(bintang3)
+
