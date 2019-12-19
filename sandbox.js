@@ -1,11 +1,7 @@
-function monitorCount(rows, columns) {
-  return rows * columns;
+let jam
+let menit=200
+
+if(menit/60>=1){
+    jam=menit/60;
 }
-
-function costOfMonitors(rows,columns){
-  return monitorCount(rows,columns)*200;
-}
-
-const totalCost=costOfMonitors(5,4);
-
-console.log(totalCost)
+console.log(jam)
