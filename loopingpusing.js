@@ -31,6 +31,4 @@ for(i=0; i<=rows3;i++){
         bintang3+="*"
     }bintang3+="\n"
 }
-
 console.log(bintang3)
-
