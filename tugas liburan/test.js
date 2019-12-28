@@ -1,4 +1,4 @@
-let firstArrived=[['B 1171 BA', 'merah'], ['B 1172 BA', 'kuning'], ['B 1173 BA', 'hitam'], ['B 1174 BA', 'hitam']]
+/*let firstArrived=[['B 1171 BA', 'merah'], ['B 1172 BA', 'kuning'], ['B 1173 BA', 'hitam'], ['B 1174 BA', 'hitam']]
 
 
 let arraybaru=[]
@@ -25,10 +25,7 @@ for(let plat=0; plat<=firstArrived.length-1;plat++){
 
 
 for(let plat=0; plat<=firstArrived.length-1;plat++){
-    
-    for (let warna=0;warna<=1;warna++){
-        if(firstArrived[plat][warna]=='hitam'){
-            arraybaru.push(firstArrived[plat][0],'hitam')
+    let][0],'hitam')
         }
     }
 
@@ -38,7 +35,7 @@ console.log(arraybaru)
 
 
 
-
+*/
 
 /*
 
@@ -66,6 +63,27 @@ for(let i=0; i<=firstArrived.length-1;i++){
 
 console.log(arraybaru1)
 */
+function tambahAngka(a){
+    do{
+      
+        a+=1
+      a++
+      
+    }
+    while(a<10)
+    return a
+  }
+  console.log(tambahAngka(1))
+
+
+
+function palindrome (str){
+    var a = str.toString()
+    var reversed = a.split("").reverse().join("");
+    if(reversed===a)return true;
+    return false;
+}
+console.log(palindrome(1231))
 
 
 

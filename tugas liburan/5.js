@@ -10,8 +10,38 @@
   // [ 111, 22, 55]
 */
 function palindromeChanger(numbers) {
-  // code below here
-}
+  let strNumber = numbers;
+  strNumber.map(String);
+  let arrBaru = []
 
+  function palindrome(str) {
+    var a = str.toString()
+    var reversed = a.split("").reverse().join("");
+    if (reversed === a) return true;
+    return false;
+  }
+  for (let i = 0; i < numbers.length; i++) {
+    let angka = numbers[i]
+    if (palindrome(angka) == true) {
+      arrBaru.push(angka)
+    }
+    if (palindrome(angka) !== true) {
+      var param = true
+      do {
+        param = true
+        if (palindrome(angka) !== true) {
+          angka += 1
+          
+        }
+        if (palindrome(angka) == true) {
+          param = false
+        }
+      }
+      while (param)
+      arrBaru.push(angka)
+    };
+  }
+  return arrBaru
+}
 console.log(palindromeChanger([117, 9, 20, 30, 42]))
 // [ 121, 9, 22, 33, 44 ]
