@@ -29,7 +29,7 @@
   - tidak boleh pake magic apapun
 
 */
-
+/*
 function mostCarsByState (cars) {
   //code below here
 
@@ -85,9 +85,58 @@ function mostCarsByState (cars) {
   }while(swap)
   return arrJumlahr
 
+}; */
+
+/*
+  TOL JAKARTA BANDUNG
+  Disini kita diminta oleh pemerintah untuk menentukkan siapa kendaraan
+  menghitung persentase jumlah pemudik kendaraan.
+  [INPUT]
+  cars = ['B', 'D', 'B', 'B', 'A', 'C', 'D']
+  [PROCESS]
+  cars plat - B ada 4/7
+  cars plat - D ada 2/7
+  cars plat - A ada 1/7
+  cars plat - C ada 1/7
+  [OUTPUT]
+  [ 'B',
+  42.857142857142854,
+  'D',
+  28.57142857142857,
+  'A',
+  14.285714285714285,
+  'C',
+  14.285714285714285 ]
+  NOTE:
+  - dibuat sedinamis mungkin
+  - tidak boleh pake magic apapun
+*/
+
+function mostCarsByState (cars) {
+let arrCars=[]
+for (let i=0;i<cars.length;i++){
+  if (cars[i]===cars[i]){
+    arrCars.push(cars[i])
+  }
+}
+let arrReturn = []
+let counter =0
+for (let i=0;i<arrCars.length;i++){
+ for (let j=0;j<arrCars.length;j++){
+   if (arrCars[i]===arrCars[j]){
+    counter++
+    }
+   
+ }
+ arrReturn.push([arrCars[i],counter])
+ counter = 0
+}
+arrFinal=[]
+return arrReturn
 };
 
-console.log(mostCarsByState(['B', 'D', 'B', 'B', 'A', 'C', 'D']));
+
+console.log(mostCarsByState(['B', 'D', 'B', 'B', 'A', 'C', 'D','X']));
 /*
   [ 'B',
   42.857142857142854,
