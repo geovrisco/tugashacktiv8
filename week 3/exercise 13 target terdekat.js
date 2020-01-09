@@ -1,7 +1,20 @@
 /*
-1. bikin special case untuk kalo array[0]=='o' dan array[ujung kanan]== 'o'
+1. bikin special case untuk kalo array[0]=='o' dan array[ujung kanan]== 'o' ->langsung return 
 2. bikin pengulangan lagi untuk mencari posisi o yang ditengah array (pengulangan i)
-    3.1. 
+    2.1. bikin pengulangan j didalam pengulangan i untuk maju kedepan
+        2.1.1 kondisi jika j = ' ' maka jarakMaju++
+ cuakss>2.1.2 jika j= x maka dia break; -
+        2.1.3 jika ujungnya adalah spasi maka dia set jarakMaju=infinity dan berak;
+    2.2. bikin juga pengulangan k untuk mundur sampe indeks awal
+        2.2.1 kondisi jika k =' ' maka jarakMundur++
+        2.2.2 jika kondisi k = x maka dia break
+        2.2.3 jika ujung kirinya itu spasi maka dia set jarak mundur infniti dan break
+    2.3 Bikin cek kondisional jika (jarak maju dan jarak mundur nilainya bukan nol)
+        2.3.1 cek kondisi mana yg lebih kecil terus direturn
+        2.3.3 kalo else kasi return 0
+
+    ????
+    profit
 
 
 */
