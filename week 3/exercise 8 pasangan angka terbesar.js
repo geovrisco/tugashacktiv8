@@ -27,4 +27,4 @@ console.log(pasanganTerbesar(12783456)); // 83
 console.log(pasanganTerbesar(910233)); // 91
 console.log(pasanganTerbesar(71856421)); // 85
 console.log(pasanganTerbesar(79918293)); // 99
-console.log(pasanganTerbesar(9928418239821)); // 99
+console.log(pasanganTerbesar(92841823989921)); // 99
