@@ -14,11 +14,15 @@
 console.log(balikKata(12321))*/
 
   
-  // TEST CASES
-var angka= 1234
-var join = angka.toString()
+//   // TEST CASES
+// var angka= 1234
+// var join = angka.toString()
 
-var b = join[0]+join[1]
-var c = Number(b) * 2
+// var b = join[0]+join[1]
+// var c = Number(b) * 2
 
-console.log(c)
+// console.log(c)
+
+var arr=[]
+
+console.log(arr.length)
