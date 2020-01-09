@@ -112,31 +112,94 @@ function mostCarsByState (cars) {
   - tidak boleh pake magic apapun
 */
 
-function mostCarsByState (cars) {
-let arrCars=[]
-for (let i=0;i<cars.length;i++){
-  if (cars[i]===cars[i]){
-    arrCars.push(cars[i])
-  }
-}
-let arrReturn = []
-let counter =0
-for (let i=0;i<arrCars.length;i++){
- for (let j=0;j<arrCars.length;j++){
-   if (arrCars[i]===arrCars[j]){
-    counter++
+// function mostCarsByState (cars) {
+// let arrCars=[]
+// for (let i=0;i<cars.length;i++){
+//   if (cars[i]===cars[i]){
+//     arrCars.push(cars[i])
+//   }
+// }
+// console.log(arrCars + "   <<  array cars")
+
+// let arrResult=[]
+// for (let i=0;i<arrCars.length;i++){
+//   let counter = 0;
+//   for (let j=0;j<arrCars.length;j++){
+//     if (arrCars[i]==arrCars[j]){
+//       counter=counter+1
+//     }
+//   }
+
+//   arrResult.push([arrCars[i],counter])
+// }
+// console.log("hasil array mau di sort")
+// console.log(arrResult)
+
+// do {
+//   swap = false
+//   for (let i=0 ;i<arrResult.length-1;i++){
+//     if (arrResult[i][0]> arrResult[i+1][0]){
+//       temp=arrResult[i][0]
+//       temp1=arrResult[i][1]
+//       arrResult[i][0]=arrResult[i+1][0]
+//       arrResult[i][1]=arrResult[i+1][1]
+//       arrResult[i+1][0]=temp
+//       arrResult[i+1][1]=temp1
+//       swap = true
+//     }
+//   }
+// }
+// while(swap)
+
+
+// console.log("><><><><><><><>udah sort><><><><><><><><>")
+// console.log (arrResult)
+
+// let arrResultUdahDiSort=[]
+// for (let i =0;i<arrResult.length-1;i++){
+//   if (arrResult[i][0]!==arrResult[i+1][0]){
+//     arrResultUdahDiSort.push([arrResult[i][0],arrResult[i][1]/cars.length*100])
+//   }
+// }
+// arrResultUdahDiSort.push([arrResult[arrResult.length-1][0],arrResult[arrResult.length-1][1]/cars.length*100])
+// console.log("><><><><><><><>seleksi ><><><><><><><><>")
+// return arrResultUdahDiSort
+// }
+
+function mostCarsByState(arrInput) {
+  let arrOutput = []
+  arrOutput.push([arrInput[0]])
+  for (let i = 0; i < arrInput.length; i++) {
+    var a = false
+    for (let j = 0; j < arrOutput.length; j++) {
+      if (arrInput[i][0] == arrOutput[j][0]) {
+        a = true
+      }
     }
-   
- }
- arrReturn.push([arrCars[i],counter])
- counter = 0
+    if (a == false) {
+      arrOutput.push([arrInput[i]])
+    }
+  }
+
+  for (let j = 0; j < arrOutput.length; j++) {
+    count = 0
+    for (let i = 0; i < arrInput.length; i++) {
+      if (arrOutput[j][0] === arrInput[i]) {
+        count = count + 1
+      }
+    }
+    arrOutput[j].push(count / arrInput.length * 100)
+  }
+
+  console.log(arrInput, 'ini array input')
+  let concatOutput = []
+  for (let i = 0; i < arrOutput.length; i++) {
+    concatOutput = concatOutput.concat(arrOutput[i])
+  }
+  return concatOutput
 }
-arrFinal=[]
-return arrReturn
-};
 
-
-console.log(mostCarsByState(['B', 'D', 'B', 'B', 'A', 'C', 'D','X']));
+console.log(mostCarsByState(['B', 'D', 'B', 'B', 'A', 'C', 'D']));
 /*
   [ 'B',
   42.857142857142854,

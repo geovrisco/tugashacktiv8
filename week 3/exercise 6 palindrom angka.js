@@ -13,9 +13,9 @@ function angkaPalindrome(num) {
             return false
         }
     }
-    if (balikKata(num==true)){
+    if (balikKata(num) == true){
         let newNum= num + 1
-        param = true
+        var param = true
         do{
           param = true 
           num+1
@@ -29,24 +29,19 @@ function angkaPalindrome(num) {
             
         }
         while(true)
-        
-
-         
-    }else{
-    param = true
-    do{
-      param = true 
-      num+1
-       if (balikKata(num)==false){
-           num ++
-       }
-       if (balikKata(num)==true){
-           param=false
-           return num
-       }
-        
-    }
-    while(true)
+    } else {
+        var param = true
+        do{
+            param = true 
+            num+1
+            if (balikKata(num)==false){
+                num ++
+            }
+            if (balikKata(num)==true){
+                param=false
+                return num
+            }    
+        } while(true)
 }
 
 
