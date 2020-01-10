@@ -49,8 +49,6 @@ function targetTerdekat(arr) {
         }
     }
     
-    
-
     for ( let a = 0; a<arr.length;a++){// seleksi mencari o
         if (arr[a]=='o'){// kalo ketemu o
             for ( let b=a; b<arr.length;b++){// dari o maju cari x atau cari spasi
@@ -93,11 +91,7 @@ function targetTerdekat(arr) {
                 return 0
             }
     }
-    
-    
-
   }
-  
   //TEST CASES
   console.log(targetTerdekat([' ', ' ', 'o', ' ', ' ', 'x', ' ', 'x'])); // 3
   console.log(targetTerdekat(['o', ' ', ' ', ' ', 'x', 'x', 'x'])); // 4

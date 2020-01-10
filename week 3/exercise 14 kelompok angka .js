@@ -13,8 +13,6 @@
 //         } else {
 //             arrGanjil.push(arr[i])
 //         }
-
-
 //     }
 //     Hasil.push(arrGenap)
 //     Hasil.push(arrGanjil)
