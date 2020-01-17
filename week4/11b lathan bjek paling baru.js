@@ -17,54 +17,77 @@
  * 
  */
 
+function toRupiah(num){
+    let numStr = num.toString()
+    let counter = 0
+    let reversd = ''
+    for (let i = numStr.length-1; i>=0; i--) {
+        reversd += numStr[i]
+        counter++
+        if (counter % 3 === 0){
+            reversd += '.'
+        }
+    }
+    let rupiah=''
+    for (let j =reversd.length-1; j >=0; j--){
+        rupiah+=reversd[j]
+    }
+    let result=''
+    for (let k = 0; k < rupiah.length; k++){
+        if (result[0]==='.'){
+            result=''
+        }
+        result+=rupiah[k]
+    }
+
+    return result
+}
+
+
 function main (cars) {
   // your code here
-  for (let i = 0; i < cars.length; i++){
-    if (cars[i].price>400000000){
-      cars[i]['pajak']='30%'
-    }else if (cars[i].price>=250000000){
-      cars[i]['pajak']='20%'
-    }else{
-      cars[i].pajak='10%'
-    }
+  let res = {
+
   }
 
+  for (let a = 0; a < cars.length; a++){
+      if (cars[a].price>400000000){
+          if (res['30%']===undefined){
+              res['30%']=[]
+          }
+          let countTax = parseInt('30%')*cars[a].price /100
+            cars[a].tax = toRupiah(countTax) 
+          res['30%'].push(cars[a])
+      }
 
-  for (let n=0; n < cars.length ; n++){
-    let carstax= parseInt(cars[n].pajak)* cars[n].price / 100
-    cars[n]['tax']=carstax
-    delete  cars[n].price
+      if (cars[a].price<=400000000){
+          if (res['20%']===undefined){
+              res['20%']=[]
+          }
+          let countTax = parseInt('20%')*cars[a].price /100
+          cars[a].tax = toRupiah(countTax) 
+          res['20%'].push(cars[a])
+      }
+
+      if (cars[a].price<=250000000){
+        if (res['10%']===undefined){
+            res['10%']=[]
+        }
+        let countTax = parseInt('10%')*cars[a].price /100
+        cars[a].tax = toRupiah(countTax) 
+        res['10%'].push(cars[a])
+    }
+
+
+  }
+
+  for (var persenPajak in res){
+      for (let i = 0 ; i < res[persenPajak].length; i++){
+          delete res[persenPajak][i].price
+      }
   }
   
-  let sortByPajak=[
-    [cars[0]]
-]
-
-  for (let j = 1; j < cars.length; j++){
-    let param = true
-    for (let k = 0; k < sortByPajak.length; k++){
-      // console.log(sortByPajak[k][0].pajak)
-      if (cars[j].pajak==sortByPajak[k][0].pajak){
-        sortByPajak[k].push(cars[j])
-        param = false
-      }
-    }
-    if (param==true){
-      sortByPajak.push( [ cars[j] ] )
-    }
-  }
-
-
-let result = {}
-
-console.log(sortByPajak)
-
-for (let m = 0; m < sortByPajak.length;m++){
-  // console.log(sortByPajak[m], '<<<<<')
-  result[sortByPajak[m][0].pajak]=sortByPajak[m]
-}
-  return result
-
+  return res
 }
 
 console.log(main([
