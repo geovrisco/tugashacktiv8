@@ -38,7 +38,7 @@ console.log('sebelum delete kaki','\n','\n')
 //Dapatkah saya menghapus sebuah properti yang sudah ada di dalam sebuah objek? Jika iya berikan contoh satu
 delete kucing.JumlahKaki
 
-
+``
 
 //Dapatkah saya membuat properti yang berupa sebuah object ke dalam object? Jika iya berikan contoh satu
 kucing.status = {
