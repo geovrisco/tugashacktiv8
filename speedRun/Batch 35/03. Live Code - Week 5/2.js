@@ -22,6 +22,47 @@ Standard kelulusan adalah minimum 70.
 
 function rapotAsrama(students) {
     // Write your code here
+  
+   let res=[]
+   let group=[students[0].asrama]
+   for (let i = 1 ; i < students.length;i++){
+    var flag=true
+    for (let j =0; j < group.length;j++){
+      if (group[j]===students[i].asrama){
+        flag=false
+      }
+    }
+    if (flag==true){
+      group.push(students[i].asrama)
+    }
+   }
+
+   for (let a =0; a < group.length;a++){
+     res.push({
+       asrama : group[a],
+       gagal :[],
+       lulus:[]
+     })
+   }
+
+   for (let j=0;j<res.length;j++){
+     var arrgagal=[]
+     var arrlulus=[]
+     for (let k=0; k < students.length;k++){
+       if (res[j].asrama===students[k].asrama){
+         if (students[k].nilai<70){
+           arrgagal.push(students[k].nama)
+         }else if (students[k].nilai>=70){
+           arrlulus.push(students[k].nama)
+         }
+       }
+     }
+     res[j].gagal.push(arrgagal)
+     res[j].lulus.push(arrlulus)
+   }
+
+   
+   return res
     
 }
 

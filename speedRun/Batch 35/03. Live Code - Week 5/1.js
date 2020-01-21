@@ -29,6 +29,11 @@ OUTPUT:
 
 function salesAmount(satu, dua) {
     // Write your code here
+    for (let i = 0; i < satu.length; i ++){
+      for (let j = 0; j < satu[i].length; j++){
+        
+      }
+    }
     
 }
 

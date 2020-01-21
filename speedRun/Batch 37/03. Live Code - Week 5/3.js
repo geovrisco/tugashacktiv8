@@ -48,7 +48,68 @@
 
 function remedialRecap(data) {
     // Write your code here
+ let   res = []
+
+    for (let i = 0; i < data.length;i++){
+    let history=data[i].history
+    let arrHistory=[history]
+    let obj={
+      name:data[i].name
+    }
+    if (history>=80){
+      obj.history=history
+    }else if (history<80){
+      for (let f=0; f<2;f++){
+        if (history<80){
+          history=history+10
+          arrHistory.push(history)
+        }
+        if (history>=80){
+          break
+        }
+      }
+      obj.history=arrHistory
+    }
+
+    let math=data[i].math
+    let arrMath=[math]
+    if (math>=80){
+      obj.math=math
+    }else if (math<=80){
+      for (let f=0; f<2;f++){
+        if (math<80){
+          math=math+10
+          arrMath.push(math)
+        }
+        if (math>=80){
+          break
+        }
+      }
+      obj.math=[arrMath]
+    }
     
+    let art=data[i].art
+    let arrArt=[art]
+    
+    if (art>=80){
+      obj.art=art
+    }else if (art<80){
+      for (let f=0; f<2;f++){
+        if (art<80){
+          art=art+10
+          arrArt.push(art)
+        }
+        if (art>=80){
+          break
+        }
+      }
+      obj.art=arrArt
+    }
+res.push(obj)
+    }
+   
+    
+    return res
 }
 
 var student1 = [

@@ -37,6 +37,8 @@ function findMovie(arrMovie) {
     arrMovie[i].unshift(date)
     arrMovie[i].push(year)
   }
+  //push year dan date
+  console.log(arrMovie)
   for (let a = 0 ; a <arrMovie.length; a++){
     if(res[arrMovie[a][4]] === undefined){
       res[arrMovie[a][4]] = []
@@ -50,10 +52,6 @@ function findMovie(arrMovie) {
     }
 
   }
-
-
-
-
   return res
 }
 

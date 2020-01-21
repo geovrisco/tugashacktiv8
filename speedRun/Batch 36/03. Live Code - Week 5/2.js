@@ -22,7 +22,43 @@ function proxytiaObject(name, role, weapon) {
       tabib: ['gada'],
       penyihir: ['tongkat']
     }
+    var job =Object.getOwnPropertyNames(proxytia)
     // Write your code here
+    
+
+    if (role===job[0]){
+      if (weapon==proxytia.ksatria[0]||weapon==proxytia.ksatria[1]){
+        return `Selamat dantang di Proxytia ${role} ${name}, gunakan ${weapon}mu untuk bermain`
+      }else{
+        return 'Senjata invalid'
+      }
+    }
+
+    if (role===job[1]){
+      if (weapon==proxytia.tabib[0]){
+        return `Selamat dantang di Proxytia ${role} ${name}, gunakan ${weapon}mu untuk bermain`
+      }else{
+        return 'Senjata invalid'
+      }
+    }
+    if (role===job[2]){
+      if (weapon==proxytia.penyihir[0]){
+        return `Selamat dantang di Proxytia ${role} ${name}, gunakan ${weapon}mu untuk bermain`
+      }else{
+        return 'Senjata invalid'
+      }
+    }
+
+   if (role !==job[0]||role !==job[1]||role !==job[2]){
+     return `Role invalid`
+   }
+
+    return job
+
+    
+
+
+    
     
 }
 

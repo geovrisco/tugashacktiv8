@@ -42,11 +42,57 @@
 function transferWindowFilter(scoutList, playerList) {
   console.log()
   // Write your code here
+  
+  let arrResult = []
+
+for (let i = 0; i < scoutList.length ; i ++){
+  
+  var posisi = scoutList[i].pos
+  var harga = scoutList[i].priceRange
+  let res = {}
+  
+    if (res.pos ===undefined){
+        res.pos = posisi
+    }
+    if (res.priceRange===undefined){
+      res.priceRange=harga
+    }
+    if (res.suggestedPlayer === undefined){
+      res.suggestedPlayer = []
+    }
+    var min=''
+    var max=''
+    var term = '-'
+    var indexof= scoutList[i].priceRange.indexOf(term)
+    for (let a = 0; a <indexof; a++){
+      min+=scoutList[i].priceRange[a]
+    }
+    // console.log(min)
+    for (let b = indexof+1; b <scoutList[i].priceRange.length; b++){
+      max+=scoutList[i].priceRange[b]
+    }
+    // console.log(max)
+
+    for (let j = 0 ; j < playerList.length; j++){
+      // console.log(playerList[j].price,max,min)
+      if (res.pos===playerList[j].position && playerList[j].price <=max || playerList[j].priceRange>=min ){
+        res.suggestedPlayer.push(playerList[j].name)
+      }
+    }
+      
+  arrResult.push(res)
+  }
+
+
+
+  return arrResult
+
 }
 
 var scoutPosition1 = [
   { pos: "Midfielder", priceRange: "1000000-2000000" },
-  { pos: "Center Back", priceRange: "1500000-2000000" }
+  { pos: "Center Back", priceRange: "1500000-2000000" },
+  
 ]
 
 var availablePlayer1 = [
@@ -68,7 +114,7 @@ console.log(transferWindowFilter(scoutPosition1, availablePlayer1))
 //  }]
 
 
-var scoutPosition2 = [
+var scoutPosition2 = [                
   { pos: "Goalkeeper", priceRange: "1800000-3200000" },
   { pos: "Forward", priceRange: "1500000-2000000" },
   { pos: "Center Back", priceRange: "600000-1500000" }

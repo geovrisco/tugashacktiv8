@@ -20,22 +20,6 @@ function countProfit(shoppers) {
     }
     let totalAmt = 0
 
-    // for (let j = 0; j < shoppers.length; j++) {
-    //     for (let k = 0; k < res.length; k++) {
-    //         if (shoppers[j].product === res[k].product) {
-    //             if (res[k].leftOver - shoppers[j].amount > 0) {
-    //                 res[k].leftOver = res[k].leftOver - shoppers[j].amount
-    //                 res[k].shoppers.push(shoppers[j].name)
-    //             }
-    //             totalAmt += shoppers[j].amount
-    //         }
-    //         if (res[k].shoppers.length < 0) {
-    //             res[k].totalProfit = 0
-    //         }
-    //         res[k].totalProfit = res[k].totalProfit * totalAmt
-    //     }
-    // }
-    //  
 for ( let j = 0; j < res.length ; j++){
     for ( let k = 0; k < shoppers.length;k++){
         if (shoppers[k].product===res[j].product && res[j].leftOver - shoppers[k].amount >=0){

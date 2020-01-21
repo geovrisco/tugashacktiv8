@@ -38,6 +38,38 @@
 
 function checkRatio(powerbank) {
     // Write your code here
+    if (powerbank===undefined){
+      return 'invalid input'
+    }
+    let p= parseInt(powerbank.panjang)
+    let l= parseInt(powerbank.lebar)
+    let t = parseInt(powerbank.tebal)
+    let dayaSimpan=''
+    for (let i = 0; i < powerbank.dayaSimpan.length - 4; i++){
+      dayaSimpan+=powerbank.dayaSimpan[i]
+    }
+    let numsimpan=parseInt(dayaSimpan)
+    let prictu= Math.round(powerbank.harga/numsimpan)
+    let vargrade= ''
+    if ((numsimpan/p/l/t) > 100){
+      vargrade='A'
+    }
+    if((numsimpan/p/l/t)>50 && (numsimpan/p/l/t)<=100){
+      vargrade='B'
+    }
+    if((numsimpan/p/l/t)<=50){
+      vargrade='C'
+    }
+    let obj={
+      merk:powerbank.merk,
+      mAhToSize: `${numsimpan/p/l/t} mAh/cm3`,
+      priceTomAh:`${prictu} idr/mAh`,
+      grade:vargrade
+
+    }
+
+    
+    return obj
     
 }
 

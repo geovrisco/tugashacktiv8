@@ -51,8 +51,57 @@
 function trainSeating(penumpang) {
     var destinations = ['A', 'B', 'C', 'D', 'E'];
     // Write your code here
-    
+    let res = {
+      '1':[],
+      '2':[],
+      '3':[],
+      '4':[]
+    }
+    for (let i = 0 ; i < penumpang.length ; i++){
+  let count = 0
+  let indexAkhir=0
+      for (let j = 0 ; j <destinations.length ; j++){
+        if (penumpang[i].awal==destinations[j]){
+          for (let k = j; k <destinations.length;k++){
+            if (destinations[k]!==penumpang[i].akhir){
+              count++
+            }
+            if (destinations[k]===penumpang[i].akhir){
+              break
+            }
+          }
+        }
+      }
+      
+      if (count===1){
+        res['1'].push({
+          nama:penumpang[i].nama,
+          seat:penumpang[i].seat
+        })
+    }
+    if (count===2){
+      res['2'].push({
+        nama:penumpang[i].nama,
+        seat:penumpang[i].seat
+      })
+  }
+  if (count===3){
+    res['3'].push({
+      nama:penumpang[i].nama,
+      seat:penumpang[i].seat
+    })
 }
+if (count===4){
+  res['4'].push({
+    nama:penumpang[i].nama,
+    seat:penumpang[i].seat
+  })
+}
+      }
+      
+
+    return res
+  }
 
 //Test Cases
 console.log(

@@ -38,7 +38,30 @@
 function counter(arr) {
     // Write your code here
     // Pseudocode starts here
-    
+    // let res = {}
+    // for (let i = 0 ; i < arr.length;i++){
+    //     let variabel=arr[i]
+    //     let counter = 0
+    //     for (let j =0 ; j <arr.length;j++){
+    //         if(arr[j]===variabel){
+    //             counter++
+    //         }
+    //     }
+    //     if (res[variabel]===undefined){
+    //         res[variabel]=counter
+    //     }
+    // }
+    // return res
+
+    let res={}
+    for (let i=0; i < arr.length; i++){
+        let variabel=arr[i]
+        let counter=0
+        for (let j=0; j )
+        if (res[variabel]==undefined){
+            res[variabel]==counter
+        }
+    }
 }
 
 console.log(counter(['Joyful', 'Infinite', 'Humble', 'Joyful', 'Glory', 'King', 'Humble', 'Infinite']))

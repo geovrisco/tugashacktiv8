@@ -38,6 +38,27 @@ function kenaRazia(date, data) {
       'Tomang Raya',
     ]
     // Write your code here
+    function isGenap(num){
+      if (num%2>0){
+        return false
+      }else{
+        return true
+      }
+    }
+    
+    var lastdigit=''
+    for (let i = 0; i < data.length; i++){
+      var strdigit=''
+      for ( let j =1; j < data[i].plat.length-3; j++){
+        strdigit+=data[i].plat[j]
+      }
+      
+      
+
+    }
+    
+
+    var hasil = isGenap(date)
     
 }
 
