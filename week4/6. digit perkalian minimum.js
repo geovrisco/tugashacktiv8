@@ -17,10 +17,9 @@ function digitPerkalianMinimum(angka) {
 let arr=[]
 let count=0
 
-  for (let i=0; i<=angka;i++){
-    
+  for (let i=0; i<=angka;i++){    
       for (let j=0; j<=angka;j++){
-        
+
           if (i*j==angka ){
               arr.push([i.toString(),j.toString()])
               count++
