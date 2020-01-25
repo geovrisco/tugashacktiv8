@@ -69,6 +69,37 @@
 
 function findRoute(angkot, source, destination) {
   // Where happiness start
+  let totalDistance = 0
+  res = {
+    distance: totalDistance,
+    routes : []
+  }
+  
+  for (let i = 0 ; i < angkot.length; i ++){
+    if (source === angkot[i].from){
+        res.routes.push(angkot[i])
+        // totalDistance=totalDistance+angkot[i].distance
+          for (let j = 0 ; j < angkot.length; j++){
+            if (destination !== angkot[j].to){
+              res.routes.push(angkot[j])
+              totalDistance=totalDistance+angkot[j].distance
+            }
+            if (destination === angkot[j].to){
+              res.routes.push(angkot[j])
+              totalDistance=totalDistance+angkot[j].distance
+              break
+            }
+          }
+    }
+  }
+  let objfinal = {
+    distance:totalDistance,
+    routes:res.routes
+  }
+
+ 
+
+  return objfinal
 }
 
 var angkot = [
