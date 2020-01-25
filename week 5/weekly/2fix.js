@@ -11,7 +11,18 @@
  *  Function akan mengoutput hasil berupa harga dan rekomendasi tempat membeli minuman-minuman tersebut dengan total harga 
  *  yang paling murah.
  */
-
+function sortMurah (array){
+    for (let i = 0 ; i < array.length ; i++){
+        for (let j = i+1; j <array.length; j++){
+            if (array[i].harga>array[j].harga){
+                temp=array[i]
+                array[i]=array[j]
+                array[j]=temp
+            }
+        }
+    }
+    return array
+}
 function beliTermurah(toBuy) {
 	var sellers = {
 		BobaFett: {
@@ -67,17 +78,14 @@ function beliTermurah(toBuy) {
           var produk = container[i][0]
         //   console.log(produk)
           let obj={}
-          if (obj.namaProduk===undefined){
-              obj.namaProduk=produk
-          }
-          if (obj.penjual === undefined){
-              obj.penjual=[]
+          if (obj[produk]===undefined){
+              obj[produk]=[]
           }
           for (const key in sellers){
               for (let j = 0; j <sellers[key].items.length; j++){
                 if (produk===sellers[key].items[j].name){
                     let tempharga = (1-sellers[key].discount)*sellers[key].items[j].price
-                    obj.penjual.push({
+                    obj[produk].push({
                         namaToko:`${key}`,
                         harga:tempharga
                     })
@@ -87,13 +95,30 @@ function beliTermurah(toBuy) {
 
           res.push(obj)
       }
-  
-      
-   
+     
     
-    return res
+   for (let i = 0 ; i < res.length ; i++){
+       for (let key in res[i]){
+           sortMurah(res[i][key])
+       }
+   }
+    // console.log(res[0])
+    // console.log(res[1])
+    let msg=''
+    for (let i = 0; i < res.length ; i++){
+        for (let key in res[i]){
+            // console.log(key)
+            msg+='\n'+key+' bisa dibeli dengan harga paling murah '+res[i][key][0].harga +' di '+res[i][key][0].namaToko +' '
+            
+        }
+    }
+    
+    return msg
 }
- 
+    
+
+  
+    
   
 var tc1 = ['Star Big Boba', 'Dragon Boba Juice'];
 var tc2 = ['Fett Drink'];
@@ -105,8 +130,8 @@ console.log(beliTermurah(tc1));
 // Star Big Boba bisa dibeli dengan harga paling murah 16200 di Kokumi
 // Dragon Boba Juice bisa dibeli dengan harga paling murah 21600 di ChatTime
 // */
-// console.log(beliTermurah(tc2)); //Fett Drink bisa dibeli dengan harga paling murah 16200 di ChatTime
+console.log(beliTermurah(tc2)); //Fett Drink bisa dibeli dengan harga paling murah 16200 di ChatTime
 // console.log(beliTermurah(tc3)); //Pembeli Tidak Membeli Apa-Apa
-// console.log(beliTermurah(tc4)); /**Star Big Boba bisa dibeli dengan harga paling murah 16200 di Kokumi
+console.log(beliTermurah(tc4)); /**Star Big Boba bisa dibeli dengan harga paling murah 16200 di Kokumi
 // // Dragon Boba Juice bisa dibeli dengan harga paling murah 21600 di ChatTime
 // // Fett Drink bisa dibeli dengan harga paling murah 16200 di ChatTime */
